@@ -142,6 +142,13 @@ public class RouteMinerMacro extends AbstractMacro {
         }
 
         if (MightyMinerConfig.routeMineOre) {
+            // Mithril Support
+            blocksList.add(MineableBlock.GRAY_MITHRIL);
+            blocksList.add(MineableBlock.GREEN_MITHRIL);
+            blocksList.add(MineableBlock.BLUE_MITHRIL);
+            blocksList.add(MineableBlock.TITANIUM);
+            
+            // Other Ores
             blocksList.add(MineableBlock.IRON);
             blocksList.add(MineableBlock.REDSTONE);
             blocksList.add(MineableBlock.COAL);
