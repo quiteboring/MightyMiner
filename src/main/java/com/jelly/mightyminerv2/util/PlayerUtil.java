@@ -18,7 +18,11 @@ public class PlayerUtil {
         // 0.25 = 3 layers of snow
         // if there is more than 3 layers of snow then i should consider that as a full block i guess
         // but there is no snow check in pathfinder so this will probably not work at all in snowy areas
-        return new BlockPos(mc.thePlayer.posX, Math.ceil(mc.thePlayer.posY - 0.25) - 1, mc.thePlayer.posZ);
+        return new BlockPos(
+            Math.floor(mc.thePlayer.posX), 
+            Math.ceil(mc.thePlayer.posY - 0.25) - 1, 
+            Math.floor(mc.thePlayer.posZ)
+        );
     }
 
     public static Vec3 getPlayerEyePos() {
@@ -26,9 +30,13 @@ public class PlayerUtil {
     }
 
     public static BlockPos getBlockStandingOnFloor() {
-        return new BlockPos(mc.thePlayer.posX, Math.floor(mc.thePlayer.posY) - 1, mc.thePlayer.posZ);
+        return new BlockPos(
+            Math.floor(mc.thePlayer.posX), 
+            Math.floor(mc.thePlayer.posY) - 1, 
+            Math.floor(mc.thePlayer.posZ)
+        );
     }
-
+    
     public static Vec3 getNextTickPosition() {
         return mc.thePlayer.getPositionVector().addVector(mc.thePlayer.motionX, 0, mc.thePlayer.motionZ);
     }
