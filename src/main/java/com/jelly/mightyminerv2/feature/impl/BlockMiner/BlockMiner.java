@@ -228,9 +228,6 @@ public class BlockMiner extends AbstractFeature {
 
     @SubscribeEvent
     protected void onChat(ClientChatReceivedEvent event) {
-        if (event.type != 0) {
-            return;
-        }
         String message = event.message.getUnformattedText().toLowerCase();
 
         if (message.contains("is now available!")) {
